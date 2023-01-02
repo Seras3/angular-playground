@@ -1,1 +1,5 @@
-<p>test-page works!</p>
+<div class="container">
+  <main class="w-full p-1 space-y-3">
+    <job-card *ngFor="let card of cards" [data]="card"></job-card>
+  </main>
+</div>

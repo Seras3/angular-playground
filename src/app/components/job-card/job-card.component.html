@@ -1,0 +1,18 @@
+<div class="card card-side bg-base-100 shadow-xl">
+  <div class="card-body">
+    <h3 class="card-subtitle">{{jobCard?.companyName}}</h3>
+    <h1 class="card-title">{{jobCard?.role}}</h1>
+    <div class="flex flex-row">
+      <p class="font-thin">{{jobCard?.salary}}</p>
+      <p class="font-thin">{{jobCard?.workType}}</p>
+      <p class="font-thin">{{jobCard?.location}}</p>
+    </div>
+    <p> {{jobCard?.description}}
+      <a class="link link-primary">Read more</a>
+    </p>
+    <div class="card-actions flex justify-between my-3">
+      <button *ngIf="jobCard" class="btn btn-primary" (click)="onSuggest(jobCard)">Suggest</button>
+      <p class="grow-0">Suggest reward: {{jobCard?.suggestReward}}</p>
+    </div>
+  </div>
+</div>
