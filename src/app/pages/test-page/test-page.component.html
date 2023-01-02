@@ -1,5 +1,19 @@
-<div class="container">
-  <main class="w-full p-1 space-y-3">
-    <job-card *ngFor="let card of cards" [data]="card"></job-card>
-  </main>
+<app-search-filters></app-search-filters>
+
+<div class="drawer drawer-mobile">
+  <input id="drawer" type="radio" class="drawer-toggle" />
+
+  <div class="drawer-content flex flex-row space-x-2 p-3">
+    <main class="w-full p-1 space-y-3">
+      <job-card *ngFor="let jobCard of jobCards" [data]="jobCard"></job-card>
+    </main>
+    <aside class="space-y-4 hidden lg:block">
+      <app-action-card *ngFor="let actionCard of actionCards" [data]="actionCard"></app-action-card>
+    </aside>
+  </div>
+
+  <div class="drawer-side">
+    <label for="drawer" class="drawer-overlay"></label>
+    <app-instant-filters [filters]="filters"></app-instant-filters>
+  </div>
 </div>

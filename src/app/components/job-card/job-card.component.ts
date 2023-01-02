@@ -8,7 +8,7 @@ import { JobCard } from './job-card.types';
   styleUrls: ['./job-card.component.scss'],
 })
 export class JobCardComponent {
-  @Input('data') jobCard: JobCard | undefined = defaultJobCard;
+  @Input('data') jobCard: JobCard = defaultJobCard;
 
   @Input() onSuggest = (jobCard: JobCard) => {
     alert(`Wanted to suggest ${jobCard.role} at ${jobCard.companyName}`);

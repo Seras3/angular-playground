@@ -1,0 +1,12 @@
+<ul class="menu p-4 w-80 bg-base-100 text-base-content">
+  <div *ngIf="filters.length; then hasFilters else noFilters"></div>
+
+  <ng-template #hasFilters>
+    <!-- Sidebar content here -->
+    <app-filter *ngFor="let filter of filters" [data]="filter"></app-filter>
+  </ng-template>
+
+  <ng-template #noFilters>
+    No Filters
+  </ng-template>
+</ul>
