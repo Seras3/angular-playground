@@ -10,6 +10,7 @@ import { ActionCardComponent } from './components/action-card/action-card.compon
 import { FilterComponent } from './components/filter/filter.component';
 import { SearchFiltersComponent } from './components/search-filters/search-filters.component';
 import { InstantFiltersComponent } from './components/instant-filters/instant-filters.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { InstantFiltersComponent } from './components/instant-filters/instant-fi
     SearchFiltersComponent,
     InstantFiltersComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

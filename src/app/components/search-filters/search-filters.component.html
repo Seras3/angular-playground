@@ -1,17 +1,17 @@
 <nav class="p-3">
   <div class="navbar bg-base-200 rounded-lg">
     <div class="flex flex-nowrap space-x-2 w-full justify-center">
-      <input type="text" placeholder="Product designer" class="input input-bordered w-full max-w-xs grow " />
-      <select class="select w-full max-w-xs shrink">
-        <option disabled selected>$45.000/year</option>
+      <input type="text" placeholder="Product designer" class="input input-bordered w-full max-w-xs grow "
+        [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()" />
+
+      <select *ngFor="let filter of filters" class="select w-full max-w-xs shrink">
+        <option value="" disabled selected>{{filter.title}}</option>
+        <option *ngFor="let option of filter.options" [selected]="option.checked" value={{option.value}}>
+          {{option.text}}
+        </option>
       </select>
-      <select class="select w-full max-w-xs shrink">
-        <option disabled selected>Full-time</option>
-      </select>
-      <select class="select w-full max-w-xs shrink">
-        <option disabled selected>Anywhere</option>
-      </select>
-      <button class="btn btn-primary shrink">Find offers</button>
+
+      <button class="btn btn-primary shrink" (click)="onSearch()">Find offers</button>
     </div>
   </div>
 </nav>
